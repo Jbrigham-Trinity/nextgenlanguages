@@ -1,32 +1,32 @@
 #Rotate a matrix 90 degrees to the right and left.
 #Only supports int matrices...
 
-function r90right(matrix)
-    n = size(matrix, 1)
-    m = size(matrix, 2)
-    rotated_matrix = zeros(Int64, m, n)
+function r90right(mat)
+    n = size(mat, 1)
+    m = size(mat, 2)
+    newmat = zeros(Int64, m, n)
 
     for x in 1:n
         for y in 1:m
-            rotated_matrix[y, n - x + 1] = matrix[x, y]
+            newmat[y, n - x + 1] = mat[x, y]
         end
     end
 
-    return rotated_matrix
+    return newmat
 end
 
-function r90left(matrix)
-    n = size(matrix, 1)
-    m = size(matrix, 2)
-    rotated_matrix = zeros(Int64, m, n)
+function r90left(mat)
+    n = size(mat, 1)
+    m = size(mat, 2)
+    newmat = zeros(Int64, m, n)
 
     for x in 1:n
         for y in 1:m
-            rotated_matrix[m - y + 1, x] = matrix[x, y]
+            newmat[m - y + 1, x] = mat[x, y]
         end
     end
 
-    return rotated_matrix
+    return newmat
 end
 
     
